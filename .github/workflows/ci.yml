@@ -22,3 +22,9 @@ jobs:
     - id: build
       name: Build      
       run: dotnet build --no-restore
+      
+    - id: test
+      name: Test
+      run: dotnet test "WiredBrain.Tests/WiredBrain.Tests.csproj" --collect "XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura
+
+      
